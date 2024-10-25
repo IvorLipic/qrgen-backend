@@ -1,0 +1,35 @@
+spring:
+    application:
+        name: qrgen
+    security:
+        oauth2:
+          client:
+             registration:
+               auth0:
+                 client-id: ${REG_CLIENT_ID}
+                 client-secret: ${REG_CLIENT_SECRET}
+                 scope: openid
+             provider:
+               auth0:
+                 issuer-uri: ${ISSUER_URI}
+          resourceserver:
+            jwt:
+              issuer-uri: ${ISSUER_URI}
+              audiences: https://qrgen/api
+    datasource:
+        url: ${DB_URL}
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+app:
+    base-url: ${BASE_URL}
+
