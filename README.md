@@ -5,7 +5,7 @@ The Spring Boot backend serves as the foundation for a web application [qrgen-fr
       - /count (GET) -> reuturns total number of generated tickets so far (Public endpoint)
       - /{ticketId} (GET) -> returns the ticket details (OIDC/User protected)
 
-This back-end is deployed on [render](https://render.com/) in a Docker container. 
+This back-end is deployed on [render](https://render.com/) in a [Docker](https://www.docker.com/) container. 
 [Dockerfile](https://github.com/IvorLipic/qrgen-backend/blob/master/Dockerfile) used to make that container.
 
 In code there are "hanging" env variables -> [application.yml](https://github.com/IvorLipic/qrgen-backend/blob/master/src/main/resources/application.yml).
